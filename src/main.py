@@ -1,10 +1,12 @@
 """!
-@file basic_tasks.py
-    This file contains a demonstration program that runs some tasks, an
-    inter-task shared variable, and a queue. The tasks don't really @b do
-    anything; the example just shows how these elements are created and run.
+@file main.py
+    This file was adapted from a multitasking example to allow for two
+    motors to be controlled simultaneously. 
 
 @author JR Ridgely
+@author Brendan Stratford
+@author Johnathan Waldmire
+@author Jonathan Romeo
 @date   2021-Dec-15 JRR Created from the remains of previous example
 @copyright (c) 2015-2021 by JR Ridgely and released under the GNU
     Public License, Version 2. 
@@ -21,8 +23,7 @@ import utime
         
 def task1_fun():
     """!
-    Task which puts things into a share and a queue.
-    @param shares A list holding the share and queue used by this task
+    Controls one motor to reach a specified angle as quickly as possible with no overshoot.
     """
     
     t1_state = 0
@@ -75,8 +76,7 @@ def task1_fun():
 
 def task2_fun():
     """!
-    Task which puts things into a share and a queue.
-    @param shares A list holding the share and queue used by this task
+    Controls one motor to reach a specified angle as quickly as possible with no overshoot.
     """
     
     t2_state = 0
