@@ -15,11 +15,11 @@ class Encoder:
         """!
         Initialize variables and make them discoverable within the class.
         Sets auto reload to largest 16 bit number.
-        @param pinA:    
-        @param pinB:
-        @param timer:
-        @param chan_A:
-        @param chan_B:
+        @param pinA:    Encoder pin used for channel A
+        @param pinB:    Encoder pin used for channel B
+        @param timer:   Timer on the STM32 corresponding to the above pins
+        @param chan_A:  Encoder channel A
+        @param chan_B:  Encoder channel B
         """
         self.pinA = pinA
         self.pinB = pinB
