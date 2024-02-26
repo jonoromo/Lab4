@@ -24,6 +24,8 @@ import utime
 def task1_fun():
     """!
     Controls one motor to reach a specified angle as quickly as possible with no overshoot.
+    A finite state machine is implemented so that the motor only performs one step response
+    and then transitions to a "wait" state (State 2).
     """
     
     t1_state = 0
@@ -77,6 +79,8 @@ def task1_fun():
 def task2_fun():
     """!
     Controls one motor to reach a specified angle as quickly as possible with no overshoot.
+    A finite state machine is implemented so that the motor only performs one step response
+    and then transitions to a "wait" state (State 2).
     """
     
     t2_state = 0
