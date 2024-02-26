@@ -1,3 +1,13 @@
+"""!
+@file motor_controller.py
+    This file controls a DC motor based on encoder readings and specified setpoints.
+
+@author Brendan Stratford
+@author Johnathan Waldmire
+@author Jonathan Romeo
+
+"""
+
 class Controller:
     """!
     Allows users to define a proportional gain value and motor position setpoint.
