@@ -1,14 +1,16 @@
 """!
-@file lab0example.py
-Run real or simulated dynamic response tests and plot the results. This program
-demonstrates a way to make a simple GUI with a plot in it. It uses Tkinter, an
-old-fashioned and ugly but useful GUI library which is included in Python by
-default.
+@file GUI.py
 
-This file is based loosely on an example found at
+This file is adapted to the Nerf blaster turret term project, from a template file
+provided for the ME 405 class.
+
+The file is based loosely on an example found at
 https://matplotlib.org/stable/gallery/user_interfaces/embedding_in_tk_sgskip.html
 
 @author Spluttflob
+@author Brendan Stratford
+@author Jonathan Romeo
+@author Johnathan Waldmire
 @date   2023-12-24 Original program, based on example from above listed source
 @copyright (c) 2023 by Spluttflob and released under the GNU Public Licenes V3
 """
