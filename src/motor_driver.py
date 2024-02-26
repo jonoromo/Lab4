@@ -1,3 +1,12 @@
+"""!
+@file motor_driver.py
+    This file drives a DC motor based on a PWM actuation signal, and can run the motor in either direction. 
+
+@author Brendan Stratford
+@author Johnathan Waldmire
+@author Jonathan Romeo
+"""
+
 class MotorDriver:
     """! 
     This class implements a motor driver for an ME405 kit. The user can specify a PWM value and

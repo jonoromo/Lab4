@@ -1,7 +1,26 @@
+"""!
+@file encoder_reader.py
+    This file reads an encoder without overflow, and bidirectionally.
 
+@author Brendan Stratford
+@author Johnathan Waldmire
+@author Jonathan Romeo
+"""
 class Encoder:
-    """"""
+    """!
+    Reads current encoder value and adds onto a value starting when the
+    program is initialized.
+    """
     def __init__(self, pinA, pinB, timer, chan_A, chan_B):
+        """!
+        Initialize variables and make them discoverable within the class.
+        Sets auto reload to largest 16 bit number.
+        @param pinA:    
+        @param pinB:
+        @param timer:
+        @param chan_A:
+        @param chan_B:
+        """
         self.pinA = pinA
         self.pinB = pinB
         self.timer = timer
@@ -13,8 +32,11 @@ class Encoder:
         self.AR = 65535
     
     def read(self):
+        """!
+        Reads encoder, checks if the change in readings triggered an auto reload.
+        If so, subtract or add (depending on the case) the auto reload plus one.
+        """
         
-        ######
         self.current_val = self.timer.counter()
         self.delta = self.current_val - self.last_val
         delta_abs = self.delta
@@ -28,6 +50,9 @@ class Encoder:
         return self.position
     
     def zero(self):
+        """!
+        Sets position to zero.
+        """
         self.position = 0
         
 
