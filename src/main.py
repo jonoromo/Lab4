@@ -44,22 +44,23 @@ def task1_fun():
             
             moe = motor_driver.MotorDriver(enPin, in2_pin, in1_pin, timmy, ch_pos, ch_neg)
             
-            pinA = pyb.Pin(pyb.Pin.board.PC6, pyb.Pin.AF_PP, pull=pyb.Pin.PULL_NONE, af=pyb.Pin.AF1_TIM2)
-            pinB = pyb.Pin(pyb.Pin.board.PC7, pyb.Pin.AF_PP, pull=pyb.Pin.PULL_NONE, af=pyb.Pin.AF1_TIM2)
+            pinA = pyb.Pin(pyb.Pin.board.PB6, pyb.Pin.AF_PP, pull=pyb.Pin.PULL_NONE, af=pyb.Pin.AF1_TIM2)
+            pinB = pyb.Pin(pyb.Pin.board.PB7, pyb.Pin.AF_PP, pull=pyb.Pin.PULL_NONE, af=pyb.Pin.AF1_TIM2)
 
-            timer = pyb.Timer(8, prescaler=1, period=65535)
+            timer = pyb.Timer(4, prescaler=1, period=65535)
             chan_A = timer.channel(1, pyb.Timer.ENC_AB, pin=pinA)
             chan_B = timer.channel(2, pyb.Timer.ENC_AB, pin=pinB)
             
             enc = encoder_reader.Encoder(pinA, pinB, timer, chan_A, chan_B)
             
-            con = motor_controller.Controller(0.06, 10000)
+            con = motor_controller.Controller(0.06, 330)
             setpoint = 0
             t1_state = 1
             
         elif (t1_state == 1):
             
-            setpoint += 10000
+            #setpoint = 200
+            setpoint = -200
             for i in range(60):
                 moe.set_duty_cycle(con.run(setpoint,enc.read()))
                 con.meas_time(utime.ticks_ms())
@@ -108,13 +109,13 @@ def task2_fun():
             
             enc_2 = encoder_reader.Encoder(pinA, pinB, timer, chan_A, chan_B)
             
-            con_2 = motor_controller.Controller(0.06, 10000)
+            con_2 = motor_controller.Controller(0.06, 100)
             setpoint = 0
             t2_state = 1
             
         elif (t2_state == 1):
             
-            setpoint += 10000
+            setpoint += 100
             for i in range(60):
                 moe_2.set_duty_cycle(con_2.run(setpoint,enc_2.read()))
                 con_2.meas_time(utime.ticks_ms())
